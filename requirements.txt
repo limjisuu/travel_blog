@@ -1,0 +1,4 @@
+1. Django==2.1.5
+2. django-debug-toolbar
+3. django-extensions
+4. ipython[notebook]
