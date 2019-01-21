@@ -22,8 +22,10 @@ from django.contrib import admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('accounts.urls')),
     path('blog/', include('blog.urls')),
     url('dojo/', include('dojo.urls')),
+    path('shop/', include('shop.urls')),
 ]
 if settings.DEBUG:
     import debug_toolbar
