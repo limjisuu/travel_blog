@@ -2,6 +2,7 @@ from django.db import models
 import re
 from django.forms import ValidationError
 from django.conf import settings
+from django.urls import reverse
 # Create your models here.
 
 def lnglat_validator(value):
@@ -34,6 +35,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', args[self.id])
 
 
 class Comment(models.Model):
