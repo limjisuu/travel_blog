@@ -2,3 +2,4 @@
 2. django-debug-toolbar
 3. django-extensions
 4. ipython[notebook]
+5. django-bootstrap3 
