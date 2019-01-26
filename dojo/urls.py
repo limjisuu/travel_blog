@@ -1,7 +1,12 @@
 from django.urls import path, re_path
 from . import views
 from . import views_cbv
+
+app_name = 'dojo' #구글링 뒤 임의 추가
+
 urlpatterns = [
+    path('new/', views.post_new),
+
     re_path(r'^sum/(?P<numbers>[\d/]+)/$', views.mysum),
     re_path(r'^hello/(?P<name>[ㄱ-힣]+)/(?P<age>\d+)/$', views.hello),
 
