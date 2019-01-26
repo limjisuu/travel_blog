@@ -35,6 +35,7 @@ def post_new(request):
             #방법 4
             post = Post.objects.create(**form.cleaned_data)
 
+
             return redirect('/dojo/') #namespace:name
     else:
         form = PostForm()
