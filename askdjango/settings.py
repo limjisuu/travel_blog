@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'accounts',
     'shop',
     'bootstrap3',
+    'imagekit',
 ]
 
 MIDDLEWARE = [
