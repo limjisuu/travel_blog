@@ -1,10 +1,12 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django import forms
 from .models import Profile
+
 
 class SignupForm(UserCreationForm):
     phone_number = forms.CharField()
     address = forms.CharField()
+
     class Meta(UserCreationForm.Meta):
         fields = UserCreationForm.Meta.fields + ('email',)
 
@@ -17,3 +19,13 @@ class SignupForm(UserCreationForm):
                 address = self.cleaned_data['address'])
 
         return user
+
+
+class LoginForm(AuthenticationForm):
+    answer = forms.IntegerField(label='3+3=?')
+
+    def clean_answer(self):
+        answer = self.cleaned_data.get('answer', None)
+        if answer != 6:
+            raise forms.ValidationError('mismatched!')
+        return answer
